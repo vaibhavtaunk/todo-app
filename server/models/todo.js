@@ -11,4 +11,13 @@ const TodoSchema = new mongoose.Schema({
   },
 });
 
+// Ensure the id is included in the returned JSON
+TodoSchema.set('toJSON', {
+  virtuals: true,
+  versionKey: false,
+  transform: (doc, ret) => {
+    delete ret._id;
+  },
+});
+
 module.exports = mongoose.model('Todo', TodoSchema);

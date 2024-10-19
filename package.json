@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "client": "npm start --prefix client",
-    "server": "nodemon server.js",
+    "server": "nodemon server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.1",
     "mongoose": "^8.7.2"
   },
